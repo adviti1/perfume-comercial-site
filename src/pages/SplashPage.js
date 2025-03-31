@@ -10,7 +10,7 @@ function SplashPage() {
 
   return (
     <div className="splash-container" onClick={handleClick}>
-      <h1 className="splash-title">PERFUMA</h1>
+      <h1 className="splash-title">PERFUMA.</h1>
     </div>
   );
 }

@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import './HomePage.css';
 
-// Import your images (make sure to add these images to your project)
+// Import your images
 import himImage from '../assets/him-perfume.jpg';
 import herImage from '../assets/her-perfume.jpg';
 
 function HomePage() {
-  const [activePage, setActivePage] = useState(null);
   const [animated, setAnimated] = useState(false);
-  const [expandedImage, setExpandedImage] = useState(null);
   const heroRef = useRef(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -33,12 +33,8 @@ function HomePage() {
     };
   }, []);
 
-  const handleImageClick = (image) => {
-    setExpandedImage(expandedImage === image ? null : image);
-  };
-
-  const handleBackClick = () => {
-    setActivePage(null);
+  const handleImageClick = (gender) => {
+    navigate(`/${gender}`);
   };
 
   const headingText = "Unlock the secret of your allure";
@@ -81,36 +77,32 @@ function HomePage() {
         {/* Main Content */}
         <section className="main-content">
           <div className="content-container">
-             </div>
+            <h2>Our Collections</h2>
+            <p>Explore our exquisite range of fragrances</p>
+          </div>
           
-          {/* Image Blocks */}
-          <div className="image-blocks">
+          {/* Image Blocks - Side by Side */}
+          <div className="image-blocks-container">
             <div 
-              className={`image-block ${expandedImage === 'him' ? 'expanded' : ''}`}
+              className="image-block"
               onClick={() => handleImageClick('him')}
             >
               <img src={himImage} alt="For Him Collection" />
-              {expandedImage === 'him' && (
-                <div className="image-overlay">
-                  <h3>For Him Collection</h3>
-                  <p>Discover our bold and sophisticated men's fragrances</p>
-                  <button className="explore-btn">Explore Collection</button>
-                </div>
-              )}
+              <div className="image-overlay">
+                <h3>For Him</h3>
+                <button className="explore-btn">View Collection</button>
+              </div>
             </div>
             
             <div 
-              className={`image-block ${expandedImage === 'her' ? 'expanded' : ''}`}
+              className="image-block"
               onClick={() => handleImageClick('her')}
             >
               <img src={herImage} alt="For Her Collection" />
-              {expandedImage === 'her' && (
-                <div className="image-overlay">
-                  <h3>For Her Collection</h3>
-                  <p>Explore our elegant and feminine women's fragrances</p>
-                  <button className="explore-btn">Explore Collection</button>
-                </div>
-              )}
+              <div className="image-overlay">
+                <h3>For Her</h3>
+                <button className="explore-btn">View Collection</button>
+              </div>
             </div>
           </div>
           

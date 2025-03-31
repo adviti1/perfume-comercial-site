@@ -6,7 +6,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <div className="navbar-left">
-          <span className="text-focus-in brand">Perfuma</span>
+          <span className="text-focus-in brand">Perfuma.</span>
         </div>
         <div className="navbar-right">
           <a href="#logout" className="nav-link text-focus-in">Logout</a>
