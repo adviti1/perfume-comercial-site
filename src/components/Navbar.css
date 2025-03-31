@@ -1,0 +1,103 @@
+.navbar {
+    width: 100%;
+    background-color: transparent;
+     position: absolute; 
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px; /* Adjust this as needed */
+    margin: 0 auto; /* Centers the container */
+    padding: 20px 30px; /* Reduced padding for better fit */
+  }
+  
+  .brand {
+    font-weight: bold;
+    font-size: 24px;
+    color: black;
+    text-decoration: none;
+  }
+  
+  .text-focus-in {
+    animation: text-focus-in 1s cubic-bezier(0.550, 0.085, 0.680, 0.530) both;
+  }
+  @keyframes text-focus-in {
+    0% {
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
+.heartbeat {
+	animation: heartbeat 1.5s ease-in-out infinite both;
+}
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+
+  
+  .navbar-right {
+    display: flex;
+    gap: 20px; /* Reduced gap between links */
+  }
+  
+  .nav-link {
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    white-space: nowrap; /* Prevents text wrapping */
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .navbar-container {
+      padding: 15px 20px;
+    }
+    
+    .navbar-right {
+      gap: 15px;
+    }
+    
+    .nav-link {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .navbar-right {
+      gap: 10px;
+    }
+    
+    .brand {
+      font-size: 20px;
+    }
+  }
