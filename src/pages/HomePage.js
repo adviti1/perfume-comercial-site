@@ -74,40 +74,42 @@ function HomePage() {
           </div>
         </section>
         
-        {/* Main Content */}
         <section className="main-content">
-          <div className="content-container">
-            <h2>Our Collections</h2>
-            <p>Explore our exquisite range of fragrances</p>
+          {/* Our Collections Section */}
+          <div className="content-container collections-intro">
           </div>
           
-          {/* Image Blocks - Side by Side */}
+          {/* Image Blocks - Side by Side with more spacing */}
           <div className="image-blocks-container">
-            <div 
-              className="image-block"
-              onClick={() => handleImageClick('him')}
-            >
-              <img src={himImage} alt="For Him Collection" />
-              <div className="image-overlay">
-                <h3>For Him</h3>
-                <button className="explore-btn">View Collection</button>
+            <div className="gender-collection">
+              <div 
+                className="image-block"
+                onClick={() => handleImageClick('him')}
+              >
+                <img src={himImage} alt="For Him Collection" />
+                <div className="image-overlay">
+                  <h3>For Him</h3>
+                  <button className="explore-btn">View Collection</button>
+                </div>
               </div>
             </div>
             
-            <div 
-              className="image-block"
-              onClick={() => handleImageClick('her')}
-            >
-              <img src={herImage} alt="For Her Collection" />
-              <div className="image-overlay">
-                <h3>For Her</h3>
-                <button className="explore-btn">View Collection</button>
+            <div className="gender-collection">
+              <div 
+                className="image-block"
+                onClick={() => handleImageClick('her')}
+              >
+                <img src={herImage} alt="For Her Collection" />
+                <div className="image-overlay">
+                  <h3>For Her</h3>
+                  <button className="explore-btn">View Collection</button>
+                </div>
               </div>
             </div>
           </div>
           
-          {/* About Section */}
-          <div className="about-section">
+          {/* About Section with more spacing */}
+          <div className="content-container about-section">
             <h2>About Our Brand</h2>
             <p>
               Founded in 2023, our perfumery brings decades of fragrance expertise 
